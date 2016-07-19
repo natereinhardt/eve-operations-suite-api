@@ -1,0 +1,5 @@
+#IDE PROJECT FILES#
+.idea/
+
+#Generated Dependencies#
+node_modules/
