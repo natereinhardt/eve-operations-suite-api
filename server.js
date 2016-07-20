@@ -21,9 +21,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use('/node_modules', express.static(__dirname +'/node_modules'));
 
-require('./server/routes')(app);
+require('./src/routes')(app);
 
-app.listen(3000);
+app.listen(54321);
 console.log('Im Listening...');
 exports = module.exports = app;
 

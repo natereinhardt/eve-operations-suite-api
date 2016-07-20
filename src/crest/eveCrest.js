@@ -4,7 +4,7 @@ var async = require("async");
 var Promise = require("bluebird");
 var request = Promise.promisifyAll(require("request"), {multiArgs: true});
 
-var eveMarketCrestEndpoint = 'https://public-crest.eveonline.com/market/10000002/orders/buy/?type=https://public-crest.eveonline.com/types/';
+var eveMarketCrestEndpoint = 'https://crest-tq.eveonline.com/market/10000002/orders/sell/?type=https://crest-tq.eveonline.com/inventory/types/';
 
 
 //Exposed Functions//
