@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 //Schema Definition
 var solarSystemSchema = new Schema({
-    id: Number,
+    _id: Number,
     name: String,
     imgUrl: String
 });

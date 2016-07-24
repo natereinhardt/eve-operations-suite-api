@@ -5,7 +5,7 @@ var solarSystemSchema = require('mongoose').model('SolarSystem').schema;
 
 //Schema Definition
 var constellationSchema = new Schema({
-    id: Number,
+    _id: Number,
     name: String,
     solarSystems: [solarSystemSchema]
 });

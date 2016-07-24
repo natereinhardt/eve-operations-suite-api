@@ -5,7 +5,7 @@ var corpSchema = require('mongoose').model('Corporation').schema;
 
 //Schema Definition
 var pilotSchema = new Schema({
-    id: Number,
+    _id: Number,
     corporation: corpSchema.ObjectId, // reference
     name: String.ObjectId, // reference
     imgUrl: String,

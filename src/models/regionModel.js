@@ -5,7 +5,7 @@ var constellationSchema = require('mongoose').model('Constellation').schema;
 
 //Schema Definition
 var regionSchema = new Schema({
-    id: Number,
+    _id: Number,
     name: String,
     constellations: [constellationSchema]
 });

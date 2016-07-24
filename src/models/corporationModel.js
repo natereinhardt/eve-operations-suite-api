@@ -11,7 +11,7 @@ var itemSchema = require('mongoose').model('Item').schema;
 
 //Schema Definition
 var corporationSchema = new Schema({
-    corpId: Number,
+    _id: Number,
     name: String,
     members: [pilotSchema.ObjectId], //References
     operations: [operationSchema.ObjectId], //References

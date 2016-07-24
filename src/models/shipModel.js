@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 //Schema Definition
 var shipSchema = new Schema({
-    id: Number,
+    _id: Number,
     name: String,
     type: {type: String},
     imgUrl: String,
