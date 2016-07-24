@@ -1,5 +1,5 @@
-var opsCtrl = require('./ops/opsCtrl');
-var eveCrest = require('./crest/eveCrest');
+var opsCtrl = require('./../controllers/opsCtrl');
+var eveCrest = require('./../controllers/eveCrest');
 
 module.exports = function(app) {
     // server routes ===========================================================
