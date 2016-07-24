@@ -12,7 +12,7 @@ Im starting this project from scratch with no generators to hopefully grasp a be
 ###Tech Stack###
 - Express
 - Nodejs
-- MongoDb
+- MongoDb (with Mongoose)
 
 ###TO RUN###
 
@@ -29,4 +29,4 @@ This steps will download the required dependencies to run the app.
 - 2: run 'mongod'  in a new console to start up your mongo database
 - Finally: run 'node server' in a new console to start up the application
 
-Now the server should be running on localhost:3000 :+1:
+Now the server should be running on localhost:54321 :+1:
