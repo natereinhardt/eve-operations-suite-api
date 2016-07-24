@@ -1,14 +1,22 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+
+var operationSchema = require('mongoose').model('Operation').schema;
+var pilotSchema = require('mongoose').model('Pilot').schema;
+var shipSchema = require('mongoose').model('Ship').schema;
+var itemSchema = require('mongoose').model('Item').schema;
+
+
+
 //Schema Definition
 var corporationSchema = new Schema({
     corpId: Number,
     name: String,
-    members: [pilot],
-    operations: [operation],
-    ships: [ship],
-    items: [item],
+    members: [pilotSchema],
+    operations: [operationSchema],
+    ships: [shipSchema],
+    items: [itemSchema],
     ceoId: Number
 });
 

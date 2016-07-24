@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var pilotSchema = require('mongoose').model('pilotModel').schema;
-var shipSchema = require('mongoose').model('shipModel').schema;
-var itemSchema = require('mongoose').model('itemModel').schema;
+var pilotSchema = require('mongoose').model('Pilot').schema;
+var shipSchema = require('mongoose').model('Ship').schema;
+var itemSchema = require('mongoose').model('Item').schema;
 
 
 //Schema Definition
