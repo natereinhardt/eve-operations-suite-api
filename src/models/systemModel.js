@@ -9,4 +9,4 @@ var solarSystemSchema = new Schema({
 });
 
 //Expose (export) the model
-var SolarSystem = mongoose.model('SolarSystem', solarSystemSchema);
+module.exports = mongoose.model('SolarSystem', solarSystemSchema);

@@ -1,11 +1,9 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var solarSystemSchema = require('mongoose').model('SolarSystem').schema;
-
 //Schema Definition
 var itemSchema = new Schema({
-    _id : Number,
+    eveId : Number,
     name: String,
     type: {
         name: String,
@@ -13,8 +11,11 @@ var itemSchema = new Schema({
         itemInfo: String
     },
     buyPrice: Number,
-    location: solarSystemSchema.ObjectId
+    location: {
+            type: Schema.ObjectId,
+            ref: 'SolarSystem'
+    }//Reference
 });
 
 //Expose (export) the model
-var Item = mongoose.model('Item', itemSchema);
+module.exports = mongoose.model('Item', itemSchema);

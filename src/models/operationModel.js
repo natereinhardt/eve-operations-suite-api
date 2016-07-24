@@ -1,22 +1,28 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var pilotSchema = require('mongoose').model('Pilot').schema;
-var haulSchema = require('mongoose').model('Haul').schema;
-var systemSchema = require('mongoose').model('System').schema;
-var corpSchema = require('mongoose').model('Corporation').schema;
-
-
 //Schema Definition
 var operationSchema = new Schema({
     _id: Number,
-    corporation: corpSchema.ObjectId, // reference
-    system: systemSchema.ObjectId, // reference
-    participants: [pilotSchema.ObjectId], // references
-    hauls: [haulSchema.ObjectId], // references
+    corporation: {
+            type: Schema.ObjectId,
+            ref: 'Corporation'
+    }, //Reference
+    system: {
+        type: Schema.ObjectId,
+        ref: 'SolarSystem'
+    }, //Reference
+    participants: [{
+        type: Schema.ObjectId,
+        ref: 'Pilot'
+    }],
+    hauls: [{
+        type: Schema.ObjectId,
+        ref: 'Haul'
+    }], //References
     startTime: Date,
     endTime: Date
 });
 
 //Expose (export) the model
-var Operation = mongoose.model('Operation', operationSchema);
+module.exports = mongoose.model('Operation', operationSchema);

@@ -1,14 +1,15 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var solarSystemSchema = require('mongoose').model('SolarSystem').schema;
-
 //Schema Definition
 var constellationSchema = new Schema({
     _id: Number,
     name: String,
-    solarSystems: [solarSystemSchema]
+    solarSystems: [{
+        type: Schema.ObjectId,
+        ref: 'SolarSystem'
+    }]
 });
 
 //Expose (export) the model
-var Constellation = mongoose.model('Constellation', constellationSchema);
+module.exports = mongoose.model('Constellation', constellationSchema);

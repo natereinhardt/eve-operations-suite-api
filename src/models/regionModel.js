@@ -1,14 +1,15 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var constellationSchema = require('mongoose').model('Constellation').schema;
-
 //Schema Definition
 var regionSchema = new Schema({
     _id: Number,
     name: String,
-    constellations: [constellationSchema]
+    constellations: [{
+        type: Schema.ObjectId,
+        ref: 'Constellation'
+    }]//Reference
 });
 
 //Expose (export) the model
-var Region = mongoose.model('Region', regionSchema);
+module.exports = mongoose.model('Region', regionSchema);

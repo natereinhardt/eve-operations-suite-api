@@ -1,24 +1,36 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-
-var operationSchema = require('mongoose').model('Operation').schema;
-var pilotSchema = require('mongoose').model('Pilot').schema;
-var shipSchema = require('mongoose').model('Ship').schema;
-var itemSchema = require('mongoose').model('Item').schema;
-
-
-
 //Schema Definition
 var corporationSchema = new Schema({
-    _id: Number,
+    eveId: Number,
     name: String,
-    members: [pilotSchema.ObjectId], //References
-    operations: [operationSchema.ObjectId], //References
-    ships: [shipSchema],
-    items: [itemSchema],
+    members: [
+        {
+        type: Schema.ObjectId,
+        ref: 'Pilot'
+        }
+    ], //References
+    operations:  [
+        {
+            type: Schema.ObjectId,
+            ref: 'Operation'
+        }
+    ], //References
+    ships: [
+        {
+            type: Schema.ObjectId,
+            ref: 'Ship'
+        }
+    ], //References,
+    items: [
+        {
+            type: Schema.ObjectId,
+            ref: 'Item'
+        }
+    ], //References,
     ceoId: Number
 });
 
 //Expose (export) the model
-var Corporation = mongoose.model('Corporation', corporationSchema);
+module.exports = mongoose.model('Corporation', corporationSchema);

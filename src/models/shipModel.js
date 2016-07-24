@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 //Schema Definition
 var shipSchema = new Schema({
-    _id: Number,
+    eveId: Number,
     name: String,
     type: {type: String},
     imgUrl: String,
@@ -11,4 +11,4 @@ var shipSchema = new Schema({
 });
 
 //Expose (export) the model
-var Ship = mongoose.model('Ship', shipSchema);
+module.exports = mongoose.model('Ship', shipSchema);
