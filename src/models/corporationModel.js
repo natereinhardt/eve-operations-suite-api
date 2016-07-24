@@ -13,8 +13,8 @@ var itemSchema = require('mongoose').model('Item').schema;
 var corporationSchema = new Schema({
     corpId: Number,
     name: String,
-    members: [pilotSchema], //References
-    operations: [operationSchema], //References
+    members: [pilotSchema.ObjectId], //References
+    operations: [operationSchema.ObjectId], //References
     ships: [shipSchema],
     items: [itemSchema],
     ceoId: Number

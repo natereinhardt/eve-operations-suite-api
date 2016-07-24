@@ -10,10 +10,10 @@ var corpSchema = require('mongoose').model('Corporation').schema;
 //Schema Definition
 var operationSchema = new Schema({
     opId: Number,
-    corporation: corpSchema, // reference
-    system: systemSchema, // reference
-    participants: [pilotSchema], // references
-    hauls: [haulSchema], // references
+    corporation: corpSchema.ObjectId, // reference
+    system: systemSchema.ObjectId, // reference
+    participants: [pilotSchema.ObjectId], // references
+    hauls: [haulSchema.ObjectId], // references
     startTime: Date,
     endTime: Date
 });
